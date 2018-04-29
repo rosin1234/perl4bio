@@ -1,0 +1,63 @@
+Lista de comandos – Aula 01
+
+#!/usr/bin/perl -w –> interpretador/compilador para sistemas UNIX, também conhecido como “shebang” informando como o Sistema operacional deveria processar um determinado script.
+
+print –> Exibir alguma mensagem ou dado na tela.
+
+chomp() –> remove o caractere especial “\n” .
+
+use –> permite o carregamento de módulos do perl, como o “use strict” interrompe um erro do código e o “use warning” informa erros dos scripts, mas mantém a execução. Ambos podem ser usados juntos.
+
+length –> retornar a quantidade de caracteres de uma string, incluindo os espaços.
+
+<STDIN> -> Operador diamante para indicar onde o script deve receber algum dado.
+
+
+Operadores relacionais:
+
+= -> Operador de atribuição. Válido para dados de quaisquer tipos.
+
+== -> Verifica se uma variável numérica é igual a outra. 
+
+> ou < -> Verifica se uma variável numérica é maior ou menor que outra. 
+
+>= ou <= -> Verifica se uma variável numérica é maior ou igual a outra.
+
+!= -> Verifica se uma variável numérica é diferente de outra. 
+
+<=> -> Realiza comparação numérica. 
+
+cmp -> Permite comparações entre strings. Retorna -1 quando a string for menor, 0 para strings iguais e 1 quando a string for maior. Uma string é maior ou menor em relação a posição de ordem alfabética da lista ASCII.
+
+eq -> Verifica se uma string é igual a outra. Significa “equals”.
+
+ne -> Verifica se uma string é diferente de outra. Significa “not equal”.
+
+lt -> Verifica se a ordenação de uma string é inferior a outra. Significa “less than”.
+
+gt -> Verifica se a ordenação de uma string é superior a outra. Significa “greater than”
+
+le -> Verifica se a ordenação de uma string é inferior ou igual a outra. Significa “greater or equal”.
+
+ge -> Verifica se a ordenação de uma string é superior ou igual a outra. Significa “less or equal"
+
+. -> Operador de concatenação de strings.
+
+
+Operadores lógicos:
+
+and ou && -> Significa “e” para validar duas condições verdadeiras.
+
+or ou || -> Significa “ou” para validar pelo menos uma das condições.
+
+! -> Significa “não” para validar se uma condição for falsa.
+
+
+Operador condicional:
+
+if -> Significa “se”, permite que blocos de condicionais sejam testados.
+
+else -> Significa “outro”, permite que se nenhum bloco de condicional foi comprovado, else será o bloco executado.
+
+elsif -> Significa “else+if”, permite que uma nova condição seja testada caso a anterior não for comprovada.
+
