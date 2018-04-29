@@ -1,4 +1,4 @@
-Lista de comandos – Aula 01
+Lista de comandos
 
 #!/usr/bin/perl -w –> interpretador/compilador para sistemas UNIX, também conhecido como “shebang” informando como o Sistema operacional deveria processar um determinado script.
 
