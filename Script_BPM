@@ -43,6 +43,7 @@ sub lifeTimeBpm(){
     
     $order = length($bpmperlife);
     switch($order){
+        case 11 {print " trilhoes"; }
         case 10 {print " bilhoes"; }
         case 9 {print " milhoes"; }
         case 8 {print " milhoes"; }
