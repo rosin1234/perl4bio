@@ -1,0 +1,61 @@
+#!/usr/bin/perl -w
+
+##Minha resolução para exercicio dos batimentos cardiacos, deu um certo trabalho, att: Rodrigo Silva 07/05/2018 00:39
+
+use Switch;
+
+system("color 1f");
+system("cls");
+print "Este Script diz quantos batimentos cardiacos um animal tera durante a vida \n";
+print "Digite um nome do animal: \n";
+my $lifespec;
+my $order;
+my $bpmperlife;
+my $animal = <STDIN>; chomp($animal);
+print "Digite o numero medio de batimentos por minuto: \n";
+my $bpm = <STDIN>;
+if($bpm =~ /[A-Z]/ || $bpm =~ /[a-z]/){
+ &numErroReset;
+}else{   
+ &explife();
+}
+
+sub explife(){ #Subfunction que verifica se o animal
+print "Digite a expectativa de vida do animal(Em anos): \n";
+$lifespec = <STDIN>;
+if($lifespec =~ /[A-Z]/ || $lifespec =~ /[a-z]/){
+    &numErroReset();
+    }else {
+    &lifeTimeBpm();
+    }
+}
+
+sub lifeTimeBpm(){
+    $bpmperlife = ($bpm * 525600) * $lifespec ; #525600 = quantidade de minutos em um ano
+    $order = length($bpmperlife);
+    print uc("$animal") . " tem em media ";
+    
+    if($order == 6){ #Este if corrige um bug de milhares com 6 numeros(ex 525 mil) ficarem com virgula(5,25 mil).
+      print substr($bpmperlife,0,3); # Para milhares com 6 caracteres imprime da posição 0 à 3
+    }else{
+        print substr($bpmperlife,0,1) . "," . substr($bpmperlife,1,2); #So pega a posição 0 e depois da virgula 1  e 2 da string de resultado.
+    }
+    
+    $order = length($bpmperlife);
+    switch($order){
+        case 10 {print " bilhoes"; }
+        case 9 {print " milhoes"; }
+        case 8 {print " milhoes"; }
+        case 7 {print " milhoes"; }
+        case 6 {print " mil"; }
+    }    
+    print " batidas do coracao na vida.\n";
+}
+
+sub numErroReset(){ #Esta subrotina reseta o código no caso de valores inseridos errados.
+    print "Insira apenas um valor numerico!";
+    print" Reiniciando...\n";
+    sleep(1);
+    system("cls");
+    system("perl ex1.pl");
+}
